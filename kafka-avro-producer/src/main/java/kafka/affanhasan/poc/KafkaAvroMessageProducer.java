@@ -19,7 +19,7 @@ import com.fasterxml.jackson.dataformat.avro.AvroSchema;
  */
 public class KafkaAvroMessageProducer {
 	
-	private static final String TOPIC_NAME = "customer-topic";
+	private static final String TOPIC_NAME = "getting-started";
 	private static final String KAFKA_SERVER_ADDRESS = "localhost:9092";
 	private static final String AVRO_SERIALIZER_CLASS = "io.confluent.kafka.serializers.KafkaAvroSerializer";
 	private static final String SCHEMA_REGISTRY_SERVER_URL = "http://localhost:8081";
