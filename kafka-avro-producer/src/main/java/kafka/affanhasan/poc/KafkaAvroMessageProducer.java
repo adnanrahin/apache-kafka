@@ -19,7 +19,7 @@ import com.fasterxml.jackson.dataformat.avro.AvroSchema;
  */
 public class KafkaAvroMessageProducer {
 	
-	private static final String TOPIC_NAME = "getting-started";
+	private static final String TOPIC_NAME = "customer-topic";
 	private static final String KAFKA_SERVER_ADDRESS = "localhost:9092";
 	private static final String AVRO_SERIALIZER_CLASS = "io.confluent.kafka.serializers.KafkaAvroSerializer";
 	private static final String SCHEMA_REGISTRY_SERVER_URL = "http://localhost:8081";
@@ -38,7 +38,7 @@ public class KafkaAvroMessageProducer {
     	try(final Producer<String, GenericRecord> producer = new KafkaProducer<>(kafkaProps);) {
     		
     		// Publishing The Messages
-    		for (int c = 0; c < 100; c++) {
+    		for (int c = 0; c < 1000000; c++) {
     			final Customer customer = CustomerGenerator.getNext();
     			GenericRecordBuilder recordBuilder = new GenericRecordBuilder(schema.getAvroSchema());
             	recordBuilder.set("name", customer.getName());
